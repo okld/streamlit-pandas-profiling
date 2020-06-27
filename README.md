@@ -12,4 +12,12 @@ pip install https://github.com/Ghasel/streamlit-pandas-profiling/releases/downlo
 
 ## Demo
 
-A demo is available in the [examples](https://github.com/Ghasel/streamlit-pandas-profiling/tree/master/examples) folder.
+You can try this component by running:
+
+```sh
+# Install dependencies
+pip install numpy pandas pandas-profiling
+
+# Run demo app
+streamlit run https://raw.githubusercontent.com/Ghasel/streamlit-pandas-profiling/0.0.1/demo/streamlit_pandas_profiling_demo.py
+```
