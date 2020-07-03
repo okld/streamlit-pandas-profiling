@@ -1,14 +1,15 @@
 import os
 import streamlit as st
+import streamlit.components.v1 as components
 
 _RELEASE = True
 
 if not _RELEASE:
-    _pandas_profiling = st.declare_component("pandas_profiling", url="http://localhost:3001")
+    _pandas_profiling = components.declare_component("pandas_profiling", url="http://localhost:3001")
 else:
     parent_dir = os.path.dirname(os.path.abspath(__file__))
     build_dir = os.path.join(parent_dir, "frontend/build")
-    _pandas_profiling = st.declare_component("pandas_profiling", path=build_dir)
+    _pandas_profiling = components.declare_component("pandas_profiling", path=build_dir)
 
 
 def st_profile_report(profile_report, key=None):
