@@ -21,3 +21,5 @@ pip install numpy pandas pandas-profiling
 # Run demo app
 streamlit run https://raw.githubusercontent.com/Ghasel/streamlit-pandas-profiling/master/examples/streamlit_pandas_profiling_demo.py
 ```
+
+![Demo](examples/streamlit_pandas_profiling_demo.gif)
