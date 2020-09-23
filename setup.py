@@ -15,7 +15,7 @@ def readme() -> str:
 
 setuptools.setup(
     name="streamlit-pandas-profiling",
-    version="0.0.4",
+    version="0.0.5",
     author="Synode",
     author_email="",
     description="Pandas profiling component for Streamlit",
