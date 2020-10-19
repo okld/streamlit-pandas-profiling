@@ -15,13 +15,13 @@ def readme() -> str:
 
 setuptools.setup(
     name="streamlit-pandas-profiling",
-    version="0.0.5",
+    version="0.0.6",
     author="Synode",
     author_email="",
     description="Pandas profiling component for Streamlit",
     long_description=readme(),
     long_description_content_type="text/markdown",
-    url="https://github.com/Ghasel/streamlit-pandas-profiling",
+    url="https://github.com/okld/streamlit-pandas-profiling",
     packages=setuptools.find_packages(),
     include_package_data=True,
     classifiers=[],

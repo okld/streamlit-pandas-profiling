@@ -40,6 +40,6 @@ if not _RELEASE:
     )
 
     pr = ProfileReport(df, explorative=True)
-
     st.title("Pandas Profiling in Streamlit")
+    st.write(df)
     st_profile_report(pr)

@@ -1,5 +1,9 @@
+import {
+  ComponentProps,
+  Streamlit,
+  withStreamlitConnection
+} from "streamlit-component-lib";
 import React, { useEffect, useRef } from "react"
-import { withStreamlitConnection, ComponentProps, Streamlit } from "./streamlit"
 
 import iframeResize from "iframe-resizer/js/iframeResizer"
 import raw from "raw.macro"

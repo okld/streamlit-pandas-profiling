@@ -19,7 +19,7 @@ You can try this component by running:
 pip install numpy pandas pandas-profiling
 
 # Run demo app
-streamlit run https://raw.githubusercontent.com/Ghasel/streamlit-pandas-profiling/master/examples/streamlit_pandas_profiling_demo.py
+streamlit run https://raw.githubusercontent.com/okld/streamlit-pandas-profiling/master/examples/streamlit_pandas_profiling_demo.py
 ```
 
-![Demo](examples/streamlit_pandas_profiling_demo.gif)
+![Demo](https://raw.githubusercontent.com/okld/streamlit-pandas-profiling/master/examples/streamlit_pandas_profiling_demo.gif)
