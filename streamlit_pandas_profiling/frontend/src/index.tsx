@@ -1,6 +1,6 @@
 import React from "react"
 import ReactDOM from "react-dom"
-import ProfileReport from "./profile-report"
+import ProfileReport from "./ProfileReport"
 
 ReactDOM.render(
   <React.StrictMode>

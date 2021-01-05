@@ -1,5 +1,7 @@
 /// <reference types="react-scripts" />
 
 declare module "iframe-resizer/js/iframeResizer"
-declare module "iframe-resizer/js/iframeResizer.contentWindow"
-declare module "raw.macro"
+declare module "!!raw-loader!*" {
+    const content: string
+    export default content
+}
