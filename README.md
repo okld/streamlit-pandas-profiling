@@ -1,25 +1,37 @@
-# Streamlit Pandas Profiling
+# 📈 [Streamlit Pandas Profiling][share_link]
 
-[Pandas profiling](https://github.com/pandas-profiling/pandas-profiling) component for [Streamlit](https://www.streamlit.io/).
+[![Open in Streamlit][share_badge]][share_link] [![GitHub][github_badge]][github_link] [![PyPI][pypi_badge]][pypi_link] 
 
 ## Installation
-
-In your python virtual environment, run:
 
 ```sh
 pip install streamlit-pandas-profiling
 ```
 
-## Demo
+## Quick usage
 
-You can try this component by running:
+```python
+import pandas as pd
+import pandas_profiling
+import streamlit as st
 
-```sh
-# Install dependencies
-pip install numpy pandas pandas-profiling
+from streamlit_pandas_profiling import st_profile_report
 
-# Run demo app
-streamlit run https://raw.githubusercontent.com/okld/streamlit-pandas-profiling/master/examples/streamlit_pandas_profiling_demo.py
+df = pd.read_csv("https://storage.googleapis.com/tf-datasets/titanic/train.csv")
+pr = df.profile_report()
+
+st_profile_report(pr)
 ```
 
-![Demo](https://raw.githubusercontent.com/okld/streamlit-pandas-profiling/master/examples/streamlit_pandas_profiling_demo.gif)
+## Demo
+
+[![Open in Streamlit][share_badge]][share_link]
+
+[share_badge]: https://static.streamlit.io/badges/streamlit_badge_black_white.svg
+[share_link]: https://share.streamlit.io/okld/streamlit-gallery/main?p=pandas_profiling
+
+[github_badge]: https://badgen.net/badge/icon/GitHub?icon=github&color=black&label
+[github_link]: https://github.com/okld/streamlit-pandas-profiling
+
+[pypi_badge]: https://badgen.net/pypi/v/streamlit-pandas-profiling?icon=pypi&color=black&label
+[pypi_link]: https://pypi.org/project/streamlit-pandas-profiling
