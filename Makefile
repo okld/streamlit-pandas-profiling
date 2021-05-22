@@ -8,6 +8,9 @@ upgrade:
 	yarn --cwd=$(FRONTEND) upgrade --latest
 	pip install -e . --upgrade
 
+dev:
+	yarn --cwd=$(FRONTEND) start
+
 build:
 	yarn --cwd=$(FRONTEND) build
 	python setup.py sdist bdist_wheel
