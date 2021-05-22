@@ -1,23 +1,23 @@
-import os
 import streamlit as st
-from streamlit.components.v1.components import declare_component
+
 from pathlib import Path
+from streamlit.components.v1.components import declare_component
+from streamlit_pandas_profiling.version import __release__, __version__
 
-_RELEASE = True
-
-if not _RELEASE:
-    _component_func = declare_component("streamlit_pandas_profiling", url="http://localhost:3001")
+if __release__:
+    _source = {"path": (Path(__file__).parent/"frontend"/"build").resolve()}
 else:
-    _component_path = (Path(__file__).parent/"frontend"/"build").resolve()
-    _component_func = declare_component("streamlit_pandas_profiling", path=_component_path)
+    _source = {"url": "http://localhost:3001"}
+
+_render_component = declare_component("streamlit_pandas_profiling", **_source)
 
 
-def st_profile_report(profile_report, height=None, navbar=True, key=None):
+def st_profile_report(report, height=None, navbar=True, key=None):
     """Display a profile report.
 
     Parameters
     ----------
-    profile_report : pandas_profiling.ProfileReport
+    report : pandas_profiling.ProfileReport
         The profile report instance to display.
     height : int or None
         Report height. If set to None, report will take full height, but
@@ -30,15 +30,25 @@ def st_profile_report(profile_report, height=None, navbar=True, key=None):
         be re-mounted in the Streamlit frontend and lose its current state.
 
     """
-    with st.spinner("Displaying profile report..."):
-        profile_report.set_variable("html", {
-            "inline": True,
-            "minify_html": True,
-            "use_local_assets": True,
-            "navbar_show": navbar if height is not None else False,
-            "style": {
-                "full_width": True
-            }
-        })
+    config = {
+        "inline": True,
+        "minify_html": True,
+        "use_local_assets": True,
+        "navbar_show": navbar if height is not None else False,
+        "style": {
+            "full_width": True
+        }
+    }
 
-        _component_func(html=profile_report.to_html(), height=height, key=key)
+    with st.spinner("Generating profile report..."):
+        try:
+            report.set_variable("html", config)
+        except AttributeError:
+            # Since Pandas Profiling 3.0.0
+            report.config.html.inline = config["inline"]
+            report.config.html.minify_html = config["minify_html"]
+            report.config.html.use_local_assets = config["use_local_assets"]
+            report.config.html.navbar_show = config["navbar_show"]
+            report.config.html.full_width = config["style"]["full_width"]
+
+        _render_component(html=report.to_html(), height=height, key=key, default=None)

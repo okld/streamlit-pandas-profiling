@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react"
+import { useEffect, useState } from "react"
 import { ComponentProps, Streamlit, withStreamlitConnection } from "streamlit-component-lib";
 
 // eslint-disable-next-line import/no-webpack-loader-syntax
