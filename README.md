@@ -27,6 +27,8 @@ st_profile_report(pr)
 
 [![Open in Streamlit][share_badge]][share_link] 
 
+[![Preview][share_img]][share_link]
+
 [share_badge]: https://static.streamlit.io/badges/streamlit_badge_black_white.svg
 [share_link]: https://share.streamlit.io/okld/streamlit-gallery/main?p=pandas-profiling
 [share_img]: https://raw.githubusercontent.com/okld/streamlit-pandas-profiling/main/preview.png
