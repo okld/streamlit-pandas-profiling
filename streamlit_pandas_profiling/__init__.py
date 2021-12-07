@@ -40,15 +40,15 @@ def st_profile_report(report, height=None, navbar=True, key=None):
         }
     }
 
-    with st.spinner("Generating profile report..."):
-        try:
-            report.set_variable("html", config)
-        except AttributeError:
-            # Since Pandas Profiling 3.0.0
-            report.config.html.inline = config["inline"]
-            report.config.html.minify_html = config["minify_html"]
-            report.config.html.use_local_assets = config["use_local_assets"]
-            report.config.html.navbar_show = config["navbar_show"]
-            report.config.html.full_width = config["style"]["full_width"]
+    try:
+        report.set_variable("html", config)
+    except AttributeError:
+        # Since Pandas Profiling 3.0.0
+        report.config.html.inline = config["inline"]
+        report.config.html.minify_html = config["minify_html"]
+        report.config.html.use_local_assets = config["use_local_assets"]
+        report.config.html.navbar_show = config["navbar_show"]
+        report.config.html.full_width = config["style"]["full_width"]
 
+    with st.spinner("Generating profile report..."):
         _render_component(html=report.to_html(), height=height, key=key, default=None)
