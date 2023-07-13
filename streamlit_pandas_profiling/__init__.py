@@ -17,7 +17,7 @@ def st_profile_report(report, height=None, navbar=True, key=None):
 
     Parameters
     ----------
-    report : pandas_profiling.ProfileReport
+    report : ydata_profiling.ProfileReport
         The profile report instance to display.
     height : int or None
         Report height. If set to None, report will take full height, but
