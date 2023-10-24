@@ -20,9 +20,9 @@ iframeResizerAgent.async = true
 const handleHeight = ({ height }: any) => {
   Streamlit.setFrameHeight(height)
 }
- 
+
 const ProfileReport = ({ args }: ProfileReportProps) => {
-  const [html, setHtml] = useState("") 
+  const [html, setHtml] = useState("")
 
   useEffect(() => {
     const fixedHeightProps = (args.height === null) ? {} : {

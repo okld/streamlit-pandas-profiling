@@ -37,3 +37,26 @@ path = "streamlit_ydata_profiling/__version__.py"
 include = [
     "/streamlit_ydata_profiling",
 ]
+
+[tool.ruff]
+exclude = []
+ignore = []
+line-length = 88
+select = [
+    "B", # flake8-bugbear
+    "B9",
+    "C", # flake8-comprehensions
+    "E", # pycodestyle errors
+    "F", # pyflakes
+    "W", # pycodestyle warnings
+    "I", # isort
+]
+
+[tool.ruff.isort]
+known-first-party = [
+    "streamlit_ydata_profiling"
+]
+known-third-party = [
+    "streamlit",
+    "ydata-profiling"
+]

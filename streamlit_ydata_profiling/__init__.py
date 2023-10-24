@@ -1,7 +1,8 @@
-import streamlit as st
-
 from pathlib import Path
+
+import streamlit as st
 from streamlit.components.v1.components import declare_component
+
 from streamlit_ydata_profiling.__version__ import __release__
 
 if __release__:

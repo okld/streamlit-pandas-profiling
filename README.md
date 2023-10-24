@@ -1,6 +1,6 @@
 # 📈 Streamlit ydata Profiling
 
-[![GitHub][github_badge]][github_link] [![PyPI][pypi_badge]][pypi_link] 
+[![GitHub][github_badge]][github_link] [![PyPI][pypi_badge]][pypi_link]
 
 ## Installation
 
@@ -34,7 +34,7 @@ streamlit run example/main.py
 
 ## Demo
 
-[![Open in Streamlit][share_badge]][share_link] 
+[![Open in Streamlit][share_badge]][share_link]
 
 [![Preview](demo.png)][share_link]
 
