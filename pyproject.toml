@@ -1,0 +1,39 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "streamlit-ydata-profiling"
+dynamic = ["version"]
+description = "ydata Profiling component for Streamlit."
+readme = "README.md"
+license = "MIT"
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Programming Language :: Python :: 3 :: Only",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+]
+requires-python = ">=3.10, <3.12"
+authors = [
+    { name = "okld" },
+]
+maintainers = [
+    { name = "pejmans21", email = "pezhmansamadi21@gmail.com" },
+]
+dependencies = [
+    "streamlit",
+    "watchdog",
+    "ydata-profiling",
+]
+
+[project.urls]
+Homepage = "https://github.com/pejmans21/streamlit-ydata-profiling"
+
+[tool.hatch.version]
+path = "streamlit_ydata_profiling/__version__.py"
+
+[tool.hatch.build.targets.sdist]
+include = [
+    "/streamlit_ydata_profiling",
+]
