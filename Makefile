@@ -7,6 +7,7 @@ set_release = \
 .PHONY: install
 install: dev
 	$(YARN) install
+	$(YARN) build
 	pip install -e .
 
 .PHONY: upgrade
