@@ -2,14 +2,14 @@ import streamlit as st
 
 from pathlib import Path
 from streamlit.components.v1.components import declare_component
-from streamlit_pandas_profiling.version import __release__, __version__
+from streamlit_ydata_profiling.__version__ import __release__
 
 if __release__:
-    _source = {"path": (Path(__file__).parent/"frontend"/"build").resolve()}
+    _source = {"path": (Path(__file__).parent / "frontend" / "build").resolve()}
 else:
     _source = {"url": "http://localhost:3001"}
 
-_render_component = declare_component("streamlit_pandas_profiling", **_source)
+_render_component = declare_component("streamlit_ydata_profiling", **_source)
 
 
 def st_profile_report(report, height=None, navbar=True, key=None):
@@ -17,7 +17,7 @@ def st_profile_report(report, height=None, navbar=True, key=None):
 
     Parameters
     ----------
-    report : pandas_profiling.ProfileReport
+    report : ydata_profiling.ProfileReport
         The profile report instance to display.
     height : int or None
         Report height. If set to None, report will take full height, but
@@ -35,15 +35,13 @@ def st_profile_report(report, height=None, navbar=True, key=None):
         "minify_html": True,
         "use_local_assets": True,
         "navbar_show": navbar if height is not None else False,
-        "style": {
-            "full_width": True
-        }
+        "style": {"full_width": True},
     }
 
     try:
         report.set_variable("html", config)
     except AttributeError:
-        # Since Pandas Profiling 3.0.0
+        # Since ydata Profiling 3.0.0
         report.config.html.inline = config["inline"]
         report.config.html.minify_html = config["minify_html"]
         report.config.html.use_local_assets = config["use_local_assets"]
